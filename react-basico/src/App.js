@@ -23,6 +23,24 @@ class App extends Component {
       }
     ]
   }
+adicionarComentario = ()=>{
+    console.log("add um comentario ...");
+    const novoComentario ={
+      nome:'joão',
+      email:'jooj@joj.com',
+      data: new Date(2020, 3, 19),
+      mensagem:'Olá mano, suave?'
+    }
+ 
+  //  let lista = this.state.comentarios;
+   // lista.push(novoComentario);
+    //this.setState({comentarios: lista});
+    this.setState({
+      comentarios:[...this.state.comentarios,novoComentario]
+    })
+}
+
+
   render(){
   return (
     <div className="App">
@@ -37,25 +55,22 @@ class App extends Component {
              email={comentario.email}
               data ={comentario.data} >
                 {comentario.mensagem}
-             
            </Comentario>
-       
-       
        ))}
+        <button onClick={this.adicionarComentario}>Adicionar um Comentario</button>
 
-
-
-    {/* tradicional com uma linha */}
+{/* 
+    tradicional com uma linha *
         <Comentario nome="Joao" email="jooj@gmail.com" data ={new Date(2020, 10, 29)} />
 
 
-        {/* como se fosse tag para pegar os afiliados */}
+     como se fosse tag para pegar os afiliados 
           <Comentario nome="Joao" email="jooj@gmail.com" data ={new Date(2020, 10, 29)} >
           nuooossa
          </Comentario>
     
           <Comentario nome="Maria" email="maria@gmail.com" data={new Date(2020, 3, 12)} />
-    
+     */}
 
     </div>
   );}

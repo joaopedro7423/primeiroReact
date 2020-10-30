@@ -7,13 +7,21 @@
     display: flex;
 
 }
+.Comentario:hover{
+   background-color: lavenderblush;
+
+}
 
 .Comentario .avatar{
     max-width: 80px;
     max-height: 80px;
     border-radius: 50%;
 }
-
+.Comentario .avatar:hover{
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 0%;
+}
 .Comentario .conteudo{
     margin-left: 1rem;
     width: 100%;

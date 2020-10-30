@@ -24,7 +24,7 @@ class App extends Component {
     ],
     novoComentario:{
       nome:'',
-      email:'',
+      email:' ',
       mensagem:' '
     }
   }
@@ -81,13 +81,14 @@ digitacao = evento =>{
                 {comentario.mensagem}
            </Comentario>
        ))}
-        <form method="post" onSubmit={this.adicionarComentario}>
+        <form method="post" onSubmit={this.adicionarComentario} className="Novo-Comentario">
           <h2>Adicionar um comentario</h2>
           <div>
             <input type="text" 
             name="nome"
             value={this.state.novoComentario.nome}
             onChange={this.digitacao}
+            required
              placeholder="Seu nome:"></input>
           </div>
           <div>
@@ -95,6 +96,7 @@ digitacao = evento =>{
              name="email"
              value={this.state.novoComentario.email}
             onChange={this.digitacao}
+            required
              placeholder="Seu email:"></input>
           </div>
           <div>
@@ -102,6 +104,7 @@ digitacao = evento =>{
              placeholder="Sua mensagem"
              value={this.state.novoComentario.mensagem}
              onChange={this.digitacao}
+             required
              rows="4"></textarea>
           </div>
 

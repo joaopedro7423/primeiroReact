@@ -1,5 +1,8 @@
 import React from 'react';
 
+//import do pacote
+import {formatRelative} from 'date-fns';
+
 //importar o css
 import './Comentario.css';
 
@@ -20,6 +23,7 @@ const Comentario = props =>{
         <h2 class='nome'>{props.nome}</h2>
         <p class='email'>{props.email}</p>
             <p class='mensagem'>{props.children}</p>
+            {/* <p>{formatRelative(props.data),new Date()}</p>   como usar um pacote para formatação de datas, ta bugando essa disgraça pq deve esta travado em um só horario e reconhece outro dai da conflito e nao nem um pouco afim de resolver essa bosta pois ja entendi o conceito foda ci */} 
             <button class='button' onClick={props.onRemove}>&times;</button>
           
 
